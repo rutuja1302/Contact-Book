@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>ShowDetails</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-card *ngFor="let user of displayUser" color="light">
+    <ion-item>
+  <ion-avatar class="profile-pic">
+    <img src="{{user.img}}">
+  </ion-avatar>
+</ion-item>
+    
+    <ion-card-header>
+      <ion-card-title class="name">{{user.name}}</ion-card-title>
+    </ion-card-header>
+    <br>
+    <ion-card-content>
+      <ion-icon name="call"></ion-icon> Mobile  : {{user.phone}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

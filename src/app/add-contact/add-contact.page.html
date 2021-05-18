@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>AddContact</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <form [formGroup]="addGroup">
+        <ion-item>
+          <ion-label>Name</ion-label>
+          <ion-input formControlName="name" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Phone</ion-label>
+          <ion-input formControlName="phone" type="tel"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Image URL</ion-label>
+          <ion-input formControlName="img" type="url"></ion-input>
+        </ion-item>
+        <br>
+        <ion-button (click)="addContact(form)" [disabled]="addGroup.invalid" expand="full" color="success">Save</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
